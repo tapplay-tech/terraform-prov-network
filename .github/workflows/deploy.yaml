@@ -8,8 +8,6 @@ on:
 jobs:
   plan-stg:
     runs-on: ubuntu-latest
-    permissions:
-      pull-request: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -37,8 +35,6 @@ jobs:
 
   deploy-stg:
     runs-on: ubuntu-latest
-    permissions:
-      pull-request: write
     environment: stg
     needs: plan-stg
     steps:
@@ -54,8 +50,6 @@ jobs:
 
   plan-prd:
     runs-on: ubuntu-latest
-    permissions:
-      pull-request: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -79,8 +73,6 @@ jobs:
   
   deploy-prod:
     runs-on: ubuntu-latest
-    permissions:
-      pull-request: write
     environment: prd
     needs: [plan-prd,  deploy-stg]
     steps:
