@@ -45,7 +45,7 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-    environment: stg
+    environment: "stg"
     needs: plan-stg
     steps:
       - name: Terraform Plan
@@ -87,7 +87,7 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
-    environment: prd
+    environment: "prd"
     needs: [plan-prd,  deploy-stg]
     steps:
       - name: Terraform Plan
