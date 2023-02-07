@@ -107,7 +107,7 @@ jobs:
           name: tfapply-prd
           path: tfapply-prd
   
-  deploy-prod:
+  deploy-prd:
     runs-on: ubuntu-latest
     environment: prd
     needs: [plan-prd,  deploy-stg]
@@ -163,7 +163,7 @@ jobs:
           terraform workspace select stg
           terraform apply -destroy -auto-approve
 
-  destroy-prod:
+  destroy-prd:
     runs-on: ubuntu-latest
     environment: prd
     needs: deploy-prd
