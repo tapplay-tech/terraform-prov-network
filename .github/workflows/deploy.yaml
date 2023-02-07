@@ -139,7 +139,7 @@ jobs:
 
   destroy-stg:
     runs-on: ubuntu-latest
-    environment: stg
+    environment: stg-destroy
     needs: deploy-stg
     steps:
       - name: Checkout
@@ -165,7 +165,7 @@ jobs:
 
   destroy-prd:
     runs-on: ubuntu-latest
-    environment: prd
+    environment: prd-destroy
     needs: deploy-prd
     steps:
       - name: Checkout
